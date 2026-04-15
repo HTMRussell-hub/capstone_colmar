@@ -109,3 +109,137 @@ button {
         padding: 32px 16px;
     }
 }
+
+/* Information Section */
+.info-section {
+    display: flex;
+    padding: 32px 24px;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.main-feature {
+    flex: 1.5;
+    padding-right: 24px;
+    border-right: 1px solid #D8D8D8;
+}
+
+.main-feature img {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.main-feature h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.side-features {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 0 16px 24px;
+}
+
+.feature-item img {
+    width: 35%;
+    margin-right: 16px;
+}
+
+/* Courses Section (CSS Grid) */
+.courses {
+    background-color: #D8D8D8;
+    padding: 32px 72px;
+    text-align: center;
+}
+
+.courses h2 {
+    font-size: 2rem;
+    margin-bottom: 32px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.course-card {
+    background-color: #FFFFFF;
+    text-align: left;
+}
+
+.course-card img {
+    width: 100%;
+}
+
+.course-card h3, .course-card span, .course-card p {
+    padding: 8px 16px;
+    display: block;
+}
+
+/* Thesis Section */
+.thesis {
+    padding: 32px 24px;
+}
+
+.thesis h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 32px;
+}
+
+.thesis-container {
+    display: flex;
+}
+
+.video-content {
+    flex: 1.5;
+    padding-right: 24px;
+}
+
+.video-content video {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.thesis-list {
+    flex: 1;
+}
+
+/* Mobile Adjustments */
+@media only screen and (max-width: 400px) {
+    .info-section, .thesis-container {
+        flex-direction: column;
+    }
+
+    .main-feature, .video-content {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .side-features .feature-item img, 
+    .side-features .feature-item .text-content p {
+        display: none; /* Hide images/desc on mobile per spec */
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .courses {
+        padding: 32px 16px;
+    }
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-top: 1px solid #D8D8D8;
+}
