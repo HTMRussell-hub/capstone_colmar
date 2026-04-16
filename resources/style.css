@@ -173,42 +173,49 @@ button {
     text-align: left;
 }
 
-.course-card img {
-    width: 100%;
+/* Container for the grid */
+.course-grid {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #D8D8D8; /* Light gray background seen in spec */
+    padding: 32px 72px;        /* Side padding for the section */
+    gap: 32px;                 /* 32px gap between cards as shown in spec */
+    justify-content: center;
 }
 
-.course-card h3, .course-card span, .course-card p {
-    padding: 8px 16px;
+.course-card {
+    background-color: #FFFFFF;
+    text-align: left;
+    width: calc(33.33% - 22px); /* Creates a 3-column layout minus the gap */
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card img {
+    width: 100%;
+    height: auto;
     display: block;
 }
 
-/* Thesis Section */
-.thesis {
-    padding: 32px 24px;
+/* Specific Spacing from Spec */
+.course-card h3 {
+    font-size: 1.25rem;
+    padding: 16px 16px 8px 16px; /* 16px top/side, 8px bottom */
+    font-weight: bold;
 }
 
-.thesis h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 32px;
+.course-card span {
+    color: #4A4A4A;
+    font-size: 0.75rem;
+    padding: 8px 16px;
+    display: block;
+    text-transform: uppercase;
 }
 
-.thesis-container {
-    display: flex;
+.course-card p {
+    color: #4A4A4A;
+    padding: 8px 16px 24px 16px; /* 24px bottom padding as shown in spec */
 }
-
-.video-content {
-    flex: 1.5;
-    padding-right: 24px;
-}
-
-.video-content video {
-    width: 100%;
-    margin-bottom: 24px;
-}
-
-.thesis-list {
-    flex: 1;
 }
 
 /* Mobile Adjustments */
