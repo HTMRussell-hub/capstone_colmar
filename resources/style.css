@@ -216,30 +216,129 @@ button {
     color: #4A4A4A;
     padding: 8px 16px 24px 16px; /* 24px bottom padding as shown in spec */
 }
+
+/* Thesis Section */
+.thesis {
+    padding: 32px 24px;
+}
+
+.thesis h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 32px;
+}
+
+.thesis-container {
+    display: flex; /* This places video and list side-by-side */
+}
+
+.video-content {
+    flex: 1.5; /* Takes up 60% of the width */
+    padding-right: 24px;
+}
+
+.video-content video {
+    width: 100%; /* Keeps video contained within its div */
+    margin-bottom: 24px;
+}
+
+.video-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.thesis-list {
+    flex: 1; /* Takes up 40% of the width */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Individual list items on the right */
+.thesis-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    margin-bottom: 8px;
+}
+
+/* Gray background for unselected items per spec */
+.thesis-item:not(:first-child) {
+    background-color: #D8D8D8;
+}
+
+.thesis-image {
+    flex: 1;
+    padding-right: 16px;
+}
+
+.thesis-image img {
+    width: 100%;
+}
+
+.thesis-info {
+    flex: 2;
 }
 
 /* Mobile Adjustments */
 @media only screen and (max-width: 400px) {
-    .info-section, .thesis-container {
+    /* Layout Reset */
+    .info-section, .thesis-container, .hero {
         flex-direction: column;
     }
 
-    .main-feature, .video-content {
-        border-right: none;
-        padding-right: 0;
+    /* Thesis Section Mobile Spec */
+    .video-content {
+        width: 100%;
+        padding: 0;
+    }
+
+    .thesis-list {
+        display: none; /* Spec hides the side-list on mobile */
+    }
+
+    .video-content p {
+        display: none; /* Spec hides the caption/quote on mobile */
+    }
+
+    /* Information Section Mobile Spec */
+    .main-feature {
+        display: none; /* Spec hides the main 'practicing' feature on mobile */
+    }
+
+    .side-features .feature-item {
+        flex-direction: column;
+        padding: 16px;
+        border-bottom: 1px solid #D8D8D8;
     }
 
     .side-features .feature-item img, 
-    .side-features .feature-item .text-content p {
-        display: none; /* Hide images/desc on mobile per spec */
+    .side-features .feature-item p {
+        display: none; /* Only show the Title and Link/Date on mobile */
     }
 
+    /* Courses Section Mobile Spec */
     .course-grid {
-        grid-template-columns: 1fr;
+        display: block; /* Switch from flex/grid to standard block stacking */
+    }
+
+    .course-card {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .course-card img, .course-card p, .course-card span {
+        display: none; /* Spec shows only the Course Title on mobile buttons */
+    }
+
+    .course-card h3 {
+        padding: 16px;
+        background-color: #D8D8D8;
+        margin-bottom: 8px;
     }
 
     .courses {
-        padding: 32px 16px;
+        padding: 16px;
+        background-color: #FFFFFF;
     }
 }
 
